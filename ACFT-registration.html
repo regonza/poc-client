@@ -1,0 +1,105 @@
+<form>
+    <label for="flightPlan">AIRCRAFT REGISTRATION </label>
+    <br><br>
+
+    <label>Aircraft ID: <input type="text" id="aircraftId" name="aircraftId" /></label>
+    <br><br>
+    <label>Flight Roules: <select id="flightRules" name="flightRules">
+            <option value="">Select Flight Rules</option>
+            <option value="V">V</option>
+            <option value="I">I</option>
+            <option value="Z">Z</option>
+            <option value="Y">Y</option>
+        </select>
+    </label>
+    <br><br>
+
+    <label>Type of Flight: <select id="typeOfFlight" name="typeOfFlight">
+            <option value="">Select type of Flight </option>
+            <option value="g">G</option>
+            <option value="m">M</option>
+            <option value="n">N</option>
+            <option value="s">S</option>
+        </select>
+    </label>
+    <br><br>
+
+    <label>Number: <input type="number" id="numberOfAcft" name="numberOfAcft"
+            style="width:05%; display:inline-block;" /></label>
+    <label>Type of Aircraft: <input type="text" id="typeOfAircraft" name="typeOfAircraft" /></label>
+    <br><br>
+
+    <label>Wake Turbulence Cat: <select id="wakeTurbulenceCat" name="wakeTurbulenceCat">
+            <option value=""></option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="H">H</option>
+        </select>
+    </label>
+    <br><br>
+
+    <label>Equipment: <input type="text" id="equipment1" name="equipment1"
+            style="width:15%; display:inline-block;" /></label> /
+    <label>
+        <input type="text" id="equipment2" name="equipment2" style="width:15%; display:inline-block;" />
+    </label>
+    <br><br>
+
+    <label>Departure Aerodrome: <input type="text" id="departureAerodrome" name="departureAerodrome" /></label>
+    <br><br>
+
+    <label>Cruising Speed: <input type="text" id="cruisingSpeed" name="cruisingSpeed" /></label>
+    <br><br>
+
+    <label for="otherInformation">Other Information:</label>
+    <br><br>
+    <textarea id="otherInformation" name="otherInformation" rows="5" cols="30"
+        style="width: 879px; height: 99px;"></textarea>
+    <br><br>
+
+    <br><br>
+    <label>Endurance<input type="time" id="endurance" name="endurance"
+            pattern="([01][0-9]|2[0-3]):[0-5][0-9]" /></label>
+    <br><br>
+
+    <label for="emergencyRadio">EMERGENCY RADIO</label>
+    <br>
+    <label>VHF<input type="checkbox" id="vhf" name="vhf" /></label>
+    <label>ELT<input type="checkbox" id="elt" name="elt" /></label>
+    <label>ELT<input type="checkbox" id="elt" name="elt" /></label>
+    <br><br>
+    <label for="survival">SURVIVAL EQUIPMENT</label>
+    <br>
+    <label>POLAR<input type="checkbox" id="polar" name="polar" /></label>
+    <label>DESERT<input type="checkbox" id="desert" name="desert" /></label>
+    <label>MARITIME<input type="checkbox" id="maritime" name="maritime" /></label>
+    <label>JUNGLE<input type="checkbox" id="jungle" name="jungle" /></label>
+    <br><br>
+    <label for="jackets">JACKETS</label>
+    <br>
+    <label>LIGHT<input type="checkbox" id="jacketLight" name="jacketLight" /></label>
+    <label>FLUORES<input type="checkbox" id="jacketFluores" name="jacketFluores" /></label>
+    <label>UHF<input type="checkbox" id="jacketUhf" name="jacketUhf" /></label>
+    <label>VHF<input type="checkbox" id="jacketVHF" name="jacketVHF" /></label>
+    <br><br>
+    <label for="dinghies">DINGHIES</label>
+    <br>
+    <label>NUMBER<input type="number" id="dinghiesNumber" name="dinghiesNumber"
+            style="width:5%; display:inline-block"></label>
+    <label>CAPACITY<input type="number" id="dinghiesCapacity" name="dinghiesCapacity"
+            style="width:8%; display:inline-block"></label>
+    <label>COLOR<input type="checkbox" id="dinghiesColour" name="dinghiesColour" /></label>
+    <label>COLOUR<input type="text" id="dinghiesColour" name="dinghiesColour"
+            style="width:8%; display:inline-block"></label>
+    <br><br>
+    <label>AIRCRAFT COLOUR AND MARKING<br><input type="text" id="acftColour" name="acftColour"
+            style="width:40%; display:inline-block;" /></label>
+    <br><br>
+    <label>TELEPHONE<br><input type="text" id="telephone" name="telephone"
+            style="width:40%; display:inline-block;" /></label>
+    <br><br>
+    <label>PILOT IN-COMMAND<br><input type="text" id="pilot" name="pilot"
+            style="width:40%; display:inline-block;" /></label>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
