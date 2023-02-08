@@ -40,7 +40,7 @@ function SignUpInfo({ formData, setFormData }) {
         /></Item>
       </Grid>
       <Grid item md={6}>
-        <Item><FlightRules /></Item>
+        <Item><FlightRules formData={formData} setFormData={setFormData} /></Item>
       </Grid>
 
 
