@@ -3,19 +3,11 @@ import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import FlightRules from './select/Select'
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Box from '@mui/material/Box';
+import TypeOfFlight from './select/TypeOfFlight'
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
-/>;
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;900&display=swap" rel="stylesheet"></link>
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -27,8 +19,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function SignUpInfo({ formData, setFormData }) {
   return (
-    <Grid container spacing={2}>
-      <Grid item md={6}>
+    <Grid container spacing={3}>
+      <Grid item md={3}>
         <Item><TextField
           id="aircraftId"
           type="text"
@@ -37,13 +29,39 @@ function SignUpInfo({ formData, setFormData }) {
           onChange={(event) =>
             setFormData({ ...formData, aircraftId: event.target.value })}
           margin="normal"
+          InputLabelProps={{ fontFamily: ['Montserrat', 'sans-serif'], fontWeight: '300' }}
         /></Item>
       </Grid>
-      <Grid item md={6}>
-        <Item><FlightRules formData={formData} setFormData={setFormData} /></Item>
+      <Grid item md={3}>
+        <Item>
+          <TextField
+            id="numberOfAcft"
+            type="number"
+            label="NUMBER:"
+            value={formData.numberOfAcft}
+            onChange={(event) =>
+              setFormData({ ...formData, numberOfAcft: event.target.value })}
+            margin="normal"
+            InputLabelProps={{ fontFamily: ['Montserrat', 'sans-serif'], fontWeight: '300' }}
+          />
+        </Item>
       </Grid>
-
-
+      <Grid item md={6}>
+        <Item>
+          <FlightRules
+            formData={formData}
+            setFormData={setFormData}
+          />
+        </Item>
+      </Grid>
+      <Grid item md={6}>
+        <Item>
+          <TypeOfFlight
+            formData={formData}
+            setFormData={setFormData}
+          />
+        </Item>
+      </Grid>
     </Grid>
   );
 }
