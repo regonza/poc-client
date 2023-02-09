@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import FlightRules from './select/Select'
 import TypeOfFlight from './select/TypeOfFlight'
+import WakeTurbulenceCat from './select/WakeTurbulenceCat'
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
@@ -20,8 +21,9 @@ const Item = styled(Paper)(({ theme }) => ({
 function SignUpInfo({ formData, setFormData }) {
   return (
     <Grid container spacing={3}>
-      <Grid item md={3}>
-        <Item><TextField
+      <Grid item md={8}>
+        <Item>
+          <TextField
           id="aircraftId"
           type="text"
           label="AIRCRAFT ID:"
@@ -30,9 +32,10 @@ function SignUpInfo({ formData, setFormData }) {
             setFormData({ ...formData, aircraftId: event.target.value })}
           margin="normal"
           InputLabelProps={{ fontFamily: ['Montserrat', 'sans-serif'], fontWeight: '300' }}
-        /></Item>
+        />
+        </Item>
       </Grid>
-      <Grid item md={3}>
+      <Grid item md={4}>
         <Item>
           <TextField
             id="numberOfAcft"
@@ -46,7 +49,7 @@ function SignUpInfo({ formData, setFormData }) {
           />
         </Item>
       </Grid>
-      <Grid item md={6}>
+      <Grid item md={3}>
         <Item>
           <FlightRules
             formData={formData}
@@ -54,9 +57,17 @@ function SignUpInfo({ formData, setFormData }) {
           />
         </Item>
       </Grid>
-      <Grid item md={6}>
+      <Grid item md={3}>
         <Item>
           <TypeOfFlight
+            formData={formData}
+            setFormData={setFormData}
+          />
+        </Item>
+      </Grid>
+      <Grid item md={3}>
+        <Item>
+          <WakeTurbulenceCat
             formData={formData}
             setFormData={setFormData}
           />
