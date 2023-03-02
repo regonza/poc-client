@@ -37,7 +37,7 @@ function SecondaryButton({ onClick, disabled },) {
         height: '10vh',
         borderRadius: 3,
       }}>
-        <ArrowBackIosNew fontSize="large" />
+        <ArrowBackIosNew  />
       </Button>
   );
 }

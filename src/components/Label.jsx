@@ -1,51 +1,35 @@
 import { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 function Label({ formData, setFormData }) {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{}}>
     <Grid container spacing={2}>
-      <Grid item xs={8}>
-        <Item>
+      <Grid item xs={6}>
           <TextField
           id="intent"
           label="Intent"
           defaultValue=""
           helperText="Ingresa un intent"
-          variant="standard"
+          fullWidth
           onChange={(event) =>
               setFormData({ ...formData, intent: event.target.value })}
           />
-        </Item>
       </Grid>
-      <Grid item xs={4}>
-          <Item>
-              <Item>
-                  <TextField
-                  id="label"
-                  label="Label"
-                  defaultValue={convertToLabel(formData?.intent)}
-                  helperText="Ingresa un label"
-                  variant="standard"
-                  onChange={(event) => {
-                    setFormData({ ...formData, label: event.target.value })
-                    convertToLabel(formData?.intent)
-                  }}    
-                  />
-              </Item>
-          </Item>
+      <Grid item xs={6}>
+          <TextField
+            id="label"
+            label="Label"
+            defaultValue={convertToLabel(formData?.intent)}
+            helperText="Ingresa un label"
+            fullWidth
+            onChange={(event) => {
+              setFormData({ ...formData, label: event.target.value })
+              convertToLabel(formData?.intent)
+            }}    
+          />
       </Grid>
     </Grid>
   </Box>
