@@ -7,7 +7,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format');
+  background-position: center; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,12 +18,28 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
+
+.body {
+  padding: 0;
+  margin: 0;
+  place-items: center;
+  min-width: 80vh;
+  min-height: 100vh; 
+}
+
+.flags {
+  padding: 0px;
+  margin: 40px;
+  place-items: center;
+}
+
+.header {
+  padding: 0;
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 80vh;
-  min-height: 100vh;
+  min-width: 100vh;
+  min-height: 10vh;
 }
 
 h1 {
@@ -33,7 +51,7 @@ h1 {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #e213bc;
     background-color: #ffffff;
   }
   a:hover {
