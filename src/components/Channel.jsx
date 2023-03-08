@@ -217,7 +217,7 @@ function Channel({ formData, setFormData }) {
           helpercolor="#ffffff"
           labelId="channel-select-label"
           id="channel-select"
-          value={formData?.channel || "Channel"}
+          value={formData?.channel}
           label="Channel"
           onChange={(event) =>
             setFormData({ ...formData, channel: event.target.value })}

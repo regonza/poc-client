@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../App.css'
 import { PrimaryButton, SecondaryButton } from "./Buttons";
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
@@ -12,34 +13,37 @@ import { Typography } from '@mui/material';
 import { AlignHorizontalCenter } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import Content from "./Content";
-import '@fontsource/montserrat/100.css';
-import '@fontsource/montserrat/200.css';
-import '@fontsource/montserrat/500.css';
-import '@fontsource/montserrat/900.css';
+import Training from "./Training";
+import '@fontsource/montserrat';
 
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     intent: "",
     label: "",
-    action: "",
     channel: "",
     language: "",
     type: "",
     content_es: "",
     content_pt: "",
     content_en: "",
+    training_es: "",
+    training_pt: "",
+    training_en: "",
+    actions: [],
   });
 
-  const FormTitles = ["LABEL", "CONTENIDO", "PARAMETROS"];
+  const FormTitles = ["LABEL", "CONTENIDO", "FRASES DE ENTRENAMIENTO", "ACCIONES"];
 
   const PageDisplay = () => {
     if (page === 0) {
       return <Label formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
       return <Content formData={formData} setFormData={setFormData} />;
+    } else if (page === 2) {
+      return <Training formData={formData} setFormData={setFormData} />;
     } else {
-      return <Action formData={formData} setFormData={setFormData} />;
+      return <Action formData={formData} setFormData={setFormData}/>;
     }
   };
 

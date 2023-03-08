@@ -67,3 +67,21 @@
 #channel-select{
   color: #F4F4F4;
 }
+
+.gridStyled{
+   height: 400px;
+   width: 100%;
+   color:'#FFFF';
+}
+.MuiDataGrid-cellContent{
+  color: #F4F4F4;
+}
+.MuiDataGrid-columnHeaderTitle{
+  color: #F4F4F4;
+}
+.MuiSvgIcon-root{
+  color: #F4F4F4;
+}
+.MuiTablePagination-toolbar{
+  color: #F4F4F4;
+}
