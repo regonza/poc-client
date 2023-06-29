@@ -92,4 +92,4 @@ function Language({ formData, setFormData }) {
   }
 }
 
-export default Language
+export default Language;

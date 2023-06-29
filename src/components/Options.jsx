@@ -84,21 +84,21 @@ const StyledMuiChipsInput = styled(
 
 let variation_es = false
 
-function Training({ formData, setFormData, }) {
+function Options({ formData, setFormData, }) {
   const [chips, setChips] = useState([])
 
   const handleChange = (newChips, id) => {
     setChips(newChips)
-    if(id === 'training_es'){
-      setFormData({ ...formData, training_es: newChips })
-      variation_es = formData.training_es.lenght == 1 ? false : true;
+    if(id === 'option_es'){
+      setFormData({ ...formData, option_es: newChips })
+      variation_es = formData.option_es.lenght == 1 ? false : true;
       console.log("variations: ", formData.training_es)
     }
-    if(id === 'training_pt'){
-      setFormData({ ...formData, training_pt: newChips })
+    if(id === 'option_pt'){
+      setFormData({ ...formData, option_pt: newChips })
     }
-    if(id === 'training_en'){
-      setFormData({ ...formData, training_en: newChips })
+    if(id === 'option_en'){
+      setFormData({ ...formData, option_en: newChips })
     }
   }
   return (
@@ -110,15 +110,15 @@ function Training({ formData, setFormData, }) {
 
           <Grid item xs={8}>
           <StyledMuiChipsInput
-              id="training_es" 
-              value={formData?.training_es}
+              id="option_es" 
+              value={formData?.option_es}
               label="escribe una frase en español y presiona enter"
               fontcolor="#ffffff"
               inputcolor="#e27a13"
               helpercolor="#f3f69d"
               fullWidth
               onChange={(event) =>
-                handleChange(event, 'training_es')
+                handleChange(event, 'option_es')
               }
            />
             
@@ -135,15 +135,15 @@ function Training({ formData, setFormData, }) {
           </Grid>
           <Grid item xs={8}>
             <StyledMuiChipsInput
-              id="training_pt" 
-              value={formData?.training_pt}
+              id="option_pt" 
+              value={formData?.option_pt}
               label="escribe una frase en portugues y presiona enter"
               fontcolor="#ffffff"
               inputcolor="#215e04"
               helpercolor="#f3f69d"
               fullWidth
               onChange={(event) =>
-                handleChange(event, 'training_pt')
+                handleChange(event, 'option_pt')
               }
             />
           </Grid>
@@ -153,15 +153,15 @@ function Training({ formData, setFormData, }) {
           </Grid>
           <Grid item xs={8}>
             <StyledMuiChipsInput
-              id="training_en" 
-              value={formData?.training_en}
+              id="option_en" 
+              value={formData?.option_en}
               label="escribe una frase en ingles y presiona enter"
               fontcolor="#ffffff"
               inputcolor="#130f6c"
               helpercolor="#f10b0b"
               fullWidth
               onChange={(event) =>
-                handleChange(event, 'training_en')
+                handleChange(event, 'option_en')
               }
             />
           </Grid>
@@ -171,4 +171,4 @@ function Training({ formData, setFormData, }) {
 }
 
 
-export default Training;
+export default Options;

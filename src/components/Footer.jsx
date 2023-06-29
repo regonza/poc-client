@@ -32,4 +32,4 @@ function Footer({ formData, setFormData }) {
     );
 }
 
-export default Footer
+export default Footer;

@@ -7,8 +7,9 @@ import Language from '../components/Language';
 import { Input, Typography } from '@mui/material';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { Gif, Margin } from '@mui/icons-material';
-import Content from './Content';
+import Category from './Category';
 import Channel from './Channel';
+// import StyledTxtField from './StyledTextField';
 
 const options = {
   shouldForwardProp: (prop) => prop !== 'fontcolor',
@@ -17,7 +18,6 @@ const options = {
 const StyledTextField = styled(
   TextField,
   Input,
-  options,
 )(({ fontcolor, inputcolor, helpercolor }) => ({
   input: {
     color: fontcolor,
@@ -102,10 +102,28 @@ function Label({ formData, setFormData, intentData, setLabelValue }) {
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <Channel formData={formData} setFormData={setFormData}/>
-          </Grid>           
-            
+          </Grid>
+
+          <Grid item xs={6}>
+            <StyledTextField
+              fontcolor="#ffffff"
+              inputcolor="#e213bc"
+              helpercolor="#ffffff"
+              id="context"
+              label="Contexto"
+              defaultValue={formData?.context}
+              fullWidth
+              onChange={(event) =>
+                setFormData({ ...formData, context: event.target.value })}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <Category formData={formData} setFormData={setFormData} />
+          </Grid>
+
         </Grid>
       </Box>
   );
@@ -121,18 +139,4 @@ function convertToLabel(intent) {
 }
 
 
-const changeSecondValue = (e) => {
-  setFirstVal(e.target.value);
-  setSecondVal(convertToLabel(e.target.value));
-}
-
-const changeLabelValue = (e) => {
-  setLabelValue(e.target.value);
-}
-
-const setLabelValue = (intent) => {
-  convertToLabel(intent)
-}
-
-
-export default Label
+export default Label;

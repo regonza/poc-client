@@ -6,25 +6,25 @@ const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'firstName', headerName: 'Action', width: 230 },
   { field: 'lastName', headerName: 'Description', width: 330, editable: true },
-  // {
-  //   field: 'age',
-  //   headerName: 'Age',
-  //   type: 'number',
-  //   width: 90,
-  // },
-  // {
-  //   field: 'fullName',
-  //   headerName: 'Full name',
-  //   description: 'This column has a value getter and is not sortable.',
-  //   sortable: false,
-  //   width: 160,
-  //   valueGetter: (params) =>
-  //     `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-  // },
+  {
+    field: 'age',
+    headerName: 'Age',
+    type: 'number',
+    width: 90,
+  },
+  {
+    field: 'fullName',
+    headerName: 'Full name',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (params) =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
 ];
 
 const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'passControl', age: 35 },
+  { id: 1, lastName: 'Snow', firstName: ' ', age: 35 },
   { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
   { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
   { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
@@ -37,8 +37,6 @@ const rows = [
 
 function Action({ formData, setFormData }) {
   const [selectedRows, setSelectedRows] = React.useState([]);
-  // const apiRef = useGridApiRef();
-  // const actions = [];
   console.log('---> ',JSON.stringify(selectedRows, null, 4));
 
   const handleChange = (selectedRows) => {
@@ -70,4 +68,4 @@ function Action({ formData, setFormData }) {
   );
 }
 
-export default Action
+export default Action;

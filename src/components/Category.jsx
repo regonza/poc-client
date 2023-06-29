@@ -198,7 +198,7 @@ const StyledSelect = styled(
   },
 }));
 
-function Channel({ formData, setFormData }) {
+function Category({ formData, setFormData }) {
   return (
     <Box sx={{ minWidth: 120 }}>
       <StyledFormControl fullWidth
@@ -207,9 +207,9 @@ function Channel({ formData, setFormData }) {
                helpercolor="#ffffff"
       >
         <InputLabel
-         id="channel-select-label"
+         id="category-select-label"
          >
-          Channel
+          Categoria
         </InputLabel>
         <StyledSelect
           fontcolor="#ffffff"
@@ -217,24 +217,25 @@ function Channel({ formData, setFormData }) {
           helpercolor="#ffffff"
           labelId="channel-select-label"
           id="channel-select"
-          value={formData?.channel}
+          value={formData?.category}
           label="Channel"
           onChange={(event) =>
-            setFormData({ ...formData, channel: event.target.value })}
+            setFormData({ ...formData, category: event.target.value })}
         >
           <StyledMenuItem 
           fontcolor="#ffffff"
           inputcolor="#e213bc"
           helpercolor="#ffffff"
-          value={'whatsapp'}>
-            Whatsapp
+          value={`faqs`}>
+            FAQ's
           </StyledMenuItem>
-          <StyledMenuItem value={'web'}>Web</StyledMenuItem>
-          <StyledMenuItem value={'ivr'}>IVR</StyledMenuItem>
+          <StyledMenuItem value={'fcr'}>FCR</StyledMenuItem>
+          <StyledMenuItem value={'ventas'}>Ventas</StyledMenuItem>
+          <StyledMenuItem value={'itinerario'}>Itinerario</StyledMenuItem>
         </StyledSelect>
       </StyledFormControl>
     </Box>
   );
 }
 
-export default Channel;
+export default Category;

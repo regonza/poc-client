@@ -136,6 +136,4 @@ function Content({ formData, setFormData, intentData, setLabelValue }) {
   );
 }
 
-
-
 export default Content;

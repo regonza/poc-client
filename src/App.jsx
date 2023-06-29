@@ -1,57 +1,78 @@
-import { useState } from 'react'
-import AppBar from '@mui/material/AppBar';
-import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Form from '../src/components/Form';
-import '@fontsource/montserrat/900.css';
+import {
+  Drawer,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+  Toolbar,
+  IconButton,
+  Typography,
+  ListItemButton
+} from "@mui/material/";
+import {
+  CheckBoxOutlineBlankOutlined,
+  DraftsOutlined,
+  HomeOutlined,
+  InboxOutlined,
+  MailOutline,
+  ReceiptOutlined,
+  Menu
+} from "@mui/icons-material/";
+import Form from './components/Form';
+import SimpleForm from './components/SimpleForm';
+import { useState } from "react";
 
+const data = [
+  {
+    name: "Crear Intent",
+    icon: <HomeOutlined />,
+  },
+  { name: "Inbox", icon: <InboxOutlined />, data: <Form/> },
+  { name: "Outbox", icon: <CheckBoxOutlineBlankOutlined />, data: <Form/> },
+  { name: "Sent mail", icon: <MailOutline />, data: <Form/> },
+  { name: "Draft", icon: <DraftsOutlined />, data: <Form/> },
+  { name: "Trash", icon: <ReceiptOutlined />, data: <Form/> },
+];
 
+function App() {
+  const [open, setOpen] = useState(false);
 
-function appBarLabel(label) {
+  const getList = () => (
+    <div>
+      {data.map((item, index) => (
+        <ListItem key={index}>
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          <ListItemText primary={item.name} style={{color: '#ffff'}}/>
+        </ListItem>
+      ))}
+    </div>
+  );
   return (
-    <Toolbar className='appBar'>
-      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-        <MenuIcon />
-      </IconButton>
-      <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, fontFamily:'Montserrat, sans-serif', fontWeight:100 }}>
-        {label}
-      </Typography>
-    </Toolbar>
+    <div className="App">
+      <div className="appBar">
+      <Toolbar>
+        <IconButton>
+          <Menu onClick={() => setOpen(true)}/>
+          <Drawer 
+            open={open} 
+            anchor={"left"} 
+            onClose={() => setOpen(false)}
+          >
+            {getList()}
+            <Divider />
+            {getList()}
+          </Drawer>
+        </IconButton>
+        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, fontFamily:'Montserrat, sans-serif', fontWeight:100 }}>
+          {"notFkgCMS"}
+        </Typography>
+      </Toolbar>
+      </div>
+      <div className='body'>
+        <SimpleForm />
+      </div>
+    </div>
   );
 }
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    primary: {
-      main: '#1976d2',
-    },
-  },
-});
-
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <Stack spacing={2} sx={{ flexGrow: 1 }}>
-        <ThemeProvider theme={darkTheme}>
-        <AppBar position="static">
-          {appBarLabel('Content Management System')}
-        </AppBar>
-        </ThemeProvider>
-      </Stack>
-      <div className='body'>
-        <Form />
-      </div>
-    </div>
-
-  )
-}
-
-export default App
+export default App;

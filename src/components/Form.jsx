@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import '../App.css'
-import { PrimaryButton, SecondaryButton } from "./Buttons";
-import Stack from '@mui/material/Stack';
-import Grid from '@mui/material/Grid';
-import Label from './Label';
-import Channel from "./Channel";
-import Action from "./Action";
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import { Typography } from '@mui/material';
-import { AlignHorizontalCenter } from "@mui/icons-material";
-import { Divider } from "@mui/material";
-import Content from "./Content";
-import Training from "./Training";
 import '@fontsource/montserrat';
+import '../App.css'
+import Label from './Label';
+import Action from "./Action";
+import Content from "./Content";
+import Options from "./Options";
+import Training from "./Training";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
+import { Divider } from "@mui/material";
+import { Typography } from '@mui/material';
+import { PrimaryButton, SecondaryButton } from "./Buttons";
 
 function Form() {
   const [page, setPage] = useState(0);
@@ -23,17 +21,22 @@ function Form() {
     label: "",
     channel: "",
     language: "",
-    type: "",
+    context: "",
     content_es: "",
     content_pt: "",
     content_en: "",
     training_es: "",
     training_pt: "",
     training_en: "",
+    category:"",
     actions: [],
+    option_es: [],
+    option_en: [],
+    option_pt: [],
   });
 
-  const FormTitles = ["LABEL", "CONTENIDO", "FRASES DE ENTRENAMIENTO", "ACCIONES"];
+  // how to make this dynamic??
+  const FormTitles = ["LABEL", "CONTENIDO", "OPTIONS", "FRASES DE ENTRENAMIENTO", "ACCIONES"];
 
   const PageDisplay = () => {
     if (page === 0) {
@@ -41,11 +44,13 @@ function Form() {
     } else if (page === 1) {
       return <Content formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
+      return <Options formData={formData} setFormData={setFormData} />;
+    } else if (page === 3) {
       return <Training formData={formData} setFormData={setFormData} />;
     } else {
       return <Action formData={formData} setFormData={setFormData}/>;
     }
-  };
+  }; 
 
   return (
     <Grid container spacing={2} minHeight={160}>
